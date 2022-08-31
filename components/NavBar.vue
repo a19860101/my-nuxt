@@ -1,8 +1,6 @@
 <template>
   <nav>
-    <a href="#">link</a>
-    <a href="#">link</a>
-    <a href="#">link</a>
-    <a href="#">link</a>
+    <nuxt-link to="/products">products</nuxt-link>
+    <nuxt-link to="/products/create">create</nuxt-link>
   </nav>
 </template>
