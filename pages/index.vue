@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
+    <button @click="handleIncrement()">+</button>
     <div>{{counter}}</div>
-    <div>{{desc}}</div>
-    <div>{{qty}}</div>
   </div>
 </template>
 
@@ -20,6 +18,11 @@ export default {
     ...mapState(['counter','title','desc','test']),
     qty(){
       return 123;
+    }
+  },
+  methods:{
+    handleIncrement(){
+      this.$store.commit('increment');
     }
   }
   // computed: {
