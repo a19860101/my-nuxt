@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'my-nuxt',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'zh-hant'
     },
     meta: [
       { charset: 'utf-8' },
