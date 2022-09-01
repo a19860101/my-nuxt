@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="handleIncrement()">+</button>
+    <button @click="increment()">+</button>
     <div>{{counter}}</div>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
     }
   },
   methods:{
-    handleIncrement(){
+    increment(){
       this.$store.commit('increment');
     }
   }
