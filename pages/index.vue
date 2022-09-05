@@ -23,10 +23,11 @@ export default {
     }
   },
   methods:{
-    ...mapActions(['increment'])
-    // increment(){
-    //   this.$store.commit('increment');
-    // }
+    // ...mapActions(['increment'])
+    increment(){
+      // this.$store.commit('increment');
+      this.$store.dispatch('increment');
+    }
   }
   // computed: {
   //   counter(){
