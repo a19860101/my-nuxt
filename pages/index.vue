@@ -1,12 +1,13 @@
 <template>
   <div>
     <button @click="increment()">+</button>
-    <div>{{counter}}</div>
+    <!-- <div>{{counter}}</div> -->
+    <div>{{todoUnComplete}}</div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 export default {
   // layout: 'master',
   name: 'IndexPage',
@@ -16,6 +17,7 @@ export default {
   computed:{
     // spread operator
     ...mapState(['counter','title','desc','test']),
+    ...mapGetters(['todoComplete','todoUnComplete']),
     qty(){
       return 123;
     }
