@@ -19,7 +19,10 @@ export const mutations = {
 
 // 非同步處理
 export const actions = {
-
+  increment(context){
+    // console.log(context);
+    return context.commit('increment');
+  }
 }
 
 

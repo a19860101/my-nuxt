@@ -1,13 +1,13 @@
 <template>
   <div>
     <button @click="increment()">+</button>
-    <!-- <div>{{counter}}</div> -->
-    <div>{{todoUnComplete}}</div>
+    <div>{{counter}}</div>
+    <!-- <div>{{todoUnComplete}}</div> -->
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapActions } from 'vuex';
 export default {
   // layout: 'master',
   name: 'IndexPage',
@@ -23,9 +23,10 @@ export default {
     }
   },
   methods:{
-    increment(){
-      this.$store.commit('increment');
-    }
+    ...mapActions(['increment'])
+    // increment(){
+    //   this.$store.commit('increment');
+    // }
   }
   // computed: {
   //   counter(){
