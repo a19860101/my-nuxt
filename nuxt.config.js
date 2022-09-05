@@ -43,5 +43,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  loading:{
+    color: 'green',
+    height: '50px'
   }
 }
