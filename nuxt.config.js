@@ -45,7 +45,7 @@ export default {
   build: {
   },
   loading:{
-    color: 'green',
-    height: '50px'
+    color: '#098',
+    height: '5px'
   }
 }

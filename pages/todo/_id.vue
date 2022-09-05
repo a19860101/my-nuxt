@@ -2,9 +2,9 @@
   <div>
     <h1>Todo #{{todo.id}}</h1>
     <div>
-
       {{todo.text}}
     </div>
+    <nuxt-link to="/">Back</nuxt-link>
   </div>
 </template>
 <script>
