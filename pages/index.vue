@@ -2,10 +2,13 @@
   <div>
     <button @click="increment()">+</button>
     <div>{{ counter }}</div>
-    <div v-for="todo in todos" :key="todo.id" class="p-3 bg-gray-200 mb-3">
-      <div>{{ todo.text }}</div>
-      <nuxt-link :to="`todo/${todo.id}`">檢視</nuxt-link>
-    </div>
+
+    <todo-item
+      v-for="todo in todos"
+      :key="todo.id"
+      :todo="todo">
+    </todo-item>
+
     <div>{{ error }}</div>
     <!-- <div>{{todoUnComplete}}</div> -->
   </div>
