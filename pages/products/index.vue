@@ -42,7 +42,8 @@
         .then(res=>{
           this.$nuxt.$loading.start();
           alert('資料已刪除');
-          this.$router.push('/products')
+          // this.$router.push('/products')
+          window.location.href='/products'
         })
       }
     },
