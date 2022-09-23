@@ -1,8 +1,7 @@
 <template>
-
   <div>
-  <h1>product index</h1>
-    <div>{{title}}</div>
+    <h1 class="text-4xl font-bold">product index</h1>
+    <div>{{products}}</div>
   </div>
 </template>
 <script>
@@ -19,10 +18,22 @@
       ]
     },
     computed:{
-      ...mapState(['title'])
+      products(){
+        return this.$store.state.product.products;
+      }
     },
     methods:{
 
+    },
+    async fetch({store,error}){
+      try {
+        await store.dispatch('product/fetchDatas');
+      }catch(e){
+        error({
+          statusCode:503,
+          message: 'error'
+        })
+      }
     }
   }
 </script>
