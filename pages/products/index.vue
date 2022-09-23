@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1 class="text-4xl font-bold">product index</h1>
-    <div>{{products}}</div>
+    <div v-for="product in products" :key="product.id">
+      <h3>{{product.name}}</h3>
+    </div>
   </div>
 </template>
 <script>
@@ -18,18 +20,25 @@
       ]
     },
     computed:{
-      products(){
-        return this.$store.state.product.products;
-      }
+      // products(){
+      //   return this.$store.state.product.products;
+      // }
+      ...mapState({
+        // products: function(state){
+        //   return state.product.products
+        // }
+        products: state => state.product.products,
+        // products: ({product}) => product.products
+      })
     },
     methods:{
 
     },
-    async fetch({store,error}){
+    async fetch(context){
       try {
-        await store.dispatch('product/fetchDatas');
+        await context.store.dispatch('product/fetchDatas');
       }catch(e){
-        error({
+        context.error({
           statusCode:503,
           message: 'error'
         })
