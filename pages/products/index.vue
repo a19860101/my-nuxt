@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="p-4">
     <h1 class="text-4xl font-bold">product index</h1>
     <div v-for="product in products" :key="product.id">
       <h3>{{product.name}}</h3>
+      <nuxt-link :to="`products/${product.id}`">檢視</nuxt-link>
     </div>
   </div>
 </template>
