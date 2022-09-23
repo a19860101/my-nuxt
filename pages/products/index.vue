@@ -4,6 +4,10 @@
     <div v-for="product in products" :key="product.id">
       <h3>{{product.name}}</h3>
       <nuxt-link :to="`products/${product.id}`">檢視</nuxt-link>
+      <form action="" method="post">
+        <input type="submit" value="刪除" class="bg-red-300 px-5 py-2" @click.prevent="deleteProduct(product.id)">
+      </form>
+      <hr>
     </div>
   </div>
 </template>
@@ -33,7 +37,14 @@
       })
     },
     methods:{
-
+      deleteProduct(id){
+        this.$axios.delete('http://localhost:3333/data/'+id)
+        .then(res=>{
+          this.$nuxt.$loading.start();
+          alert('資料已刪除');
+          this.$router.push('/products')
+        })
+      }
     },
     async fetch(context){
       try {

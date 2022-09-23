@@ -31,9 +31,8 @@
         .finally(()=>{
           this.$nuxt.$loading.finish();
         })
+      },
 
-
-      }
     }
   }
 </script>
